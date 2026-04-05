@@ -1,0 +1,12 @@
+{
+  "name": "GeoFlora",
+  "short_name": "GeoFlora",
+  "description": "Eine persistente Walking-Gartenwelt aus GPS, 3D-Pflanzen und ruhigen Klanglandschaften.",
+  "display": "standalone",
+  "background_color": "#f4ead8",
+  "theme_color": "#163329",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "de"
+}
+

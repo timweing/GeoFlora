@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "strict": true,
+    "jsx": "react-jsx",
+    "skipLibCheck": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "baseUrl": ".",
+    "paths": {
+      "@geoflora/config": [
+        "packages/config/src"
+      ],
+      "@geoflora/shared": [
+        "packages/shared/src"
+      ],
+      "@geoflora/worldgen": [
+        "packages/worldgen/src"
+      ],
+      "@geoflora/rendering": [
+        "packages/rendering/src"
+      ],
+      "@geoflora/audio": [
+        "packages/audio/src"
+      ]
+    }
+  }
+}
+

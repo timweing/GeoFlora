@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: geoflora
+    runtime: node
+    plan: free
+    autoDeployTrigger: commit
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /health
+    buildFilter:
+      paths:
+        - apps/**
+        - packages/**
+        - docs/**
+        - package.json
+        - render.yaml
+        - tsconfig.base.json
+        - README.md

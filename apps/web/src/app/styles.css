@@ -1,0 +1,377 @@
+:root {
+  color-scheme: light;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(248, 229, 184, 0.7), transparent 28rem),
+    radial-gradient(circle at right 20%, rgba(136, 183, 162, 0.24), transparent 22rem),
+    linear-gradient(180deg, #f4ead8 0%, #e9ddc4 54%, #d7ccb8 100%);
+  color: #173127;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: calc(env(safe-area-inset-top, 0px) + 1.25rem) 1rem calc(env(safe-area-inset-bottom, 0px) + 2rem);
+}
+
+.shell__glow {
+  position: absolute;
+  inset: auto;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 999px;
+  filter: blur(4rem);
+  pointer-events: none;
+}
+
+.shell__glow--left {
+  top: -5rem;
+  left: -4rem;
+  background: rgba(244, 198, 124, 0.28);
+}
+
+.shell__glow--right {
+  top: 15rem;
+  right: -8rem;
+  background: rgba(108, 160, 110, 0.22);
+}
+
+.hero,
+.panel {
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(22px);
+  background: rgba(255, 251, 244, 0.55);
+  border: 1px solid rgba(23, 49, 39, 0.08);
+  box-shadow: 0 20px 50px rgba(54, 44, 26, 0.12);
+}
+
+.hero {
+  border-radius: 1.75rem;
+  padding: 1.5rem;
+}
+
+.eyebrow,
+.section-header__kicker,
+.card__label {
+  margin: 0 0 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: rgba(23, 49, 39, 0.7);
+}
+
+.hero h1,
+.section-header h2,
+.card h3,
+.journal-entry h3 {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 10vw, 4rem);
+  line-height: 0.95;
+}
+
+.hero__copy {
+  max-width: 38rem;
+  margin: 0.9rem 0 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: rgba(23, 49, 39, 0.8);
+}
+
+.hero__row,
+.section-header,
+.planting-panel,
+.hero__status,
+.mode-switch,
+.sound-stats,
+.world-footer {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero__status {
+  justify-content: flex-start;
+}
+
+.layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.panel {
+  border-radius: 1.5rem;
+  padding: 1.1rem;
+}
+
+.panel--wide {
+  overflow: hidden;
+}
+
+.section-header__meta,
+.meta-line,
+.world-footer,
+.journal-entry p,
+.empty-state,
+.sound-headline {
+  margin: 0;
+  color: rgba(23, 49, 39, 0.72);
+  line-height: 1.5;
+}
+
+.permission-grid,
+.seed-grid {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.card,
+.seed-card,
+.journal-entry,
+.ar-state {
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(23, 49, 39, 0.08);
+}
+
+.card {
+  padding: 1rem;
+}
+
+.card p {
+  margin: 0.45rem 0 0;
+  line-height: 1.5;
+}
+
+.button,
+.chip,
+.seed-card {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.82rem 1.1rem;
+  margin-top: 0.9rem;
+  cursor: pointer;
+  background: #173127;
+  color: #f7eedc;
+  box-shadow: 0 12px 28px rgba(23, 49, 39, 0.15);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.button--secondary {
+  background: #355a48;
+}
+
+.button--ghost {
+  background: rgba(23, 49, 39, 0.08);
+  color: #173127;
+}
+
+.button--primary {
+  margin-top: 0;
+  min-width: 11rem;
+}
+
+.chip {
+  border-radius: 999px;
+  padding: 0.62rem 0.85rem;
+  border: 1px solid rgba(23, 49, 39, 0.12);
+  background: rgba(255, 255, 255, 0.4);
+  color: #173127;
+  cursor: pointer;
+}
+
+.chip--active {
+  background: #173127;
+  color: #f7eedc;
+}
+
+.status-pill {
+  min-width: 7rem;
+  border-radius: 1rem;
+  padding: 0.75rem 0.85rem;
+  display: grid;
+  gap: 0.25rem;
+  border: 1px solid transparent;
+}
+
+.status-pill span {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.status-pill strong {
+  font-size: 1rem;
+}
+
+.status-pill--emerald {
+  background: rgba(124, 168, 134, 0.16);
+  border-color: rgba(53, 90, 72, 0.14);
+}
+
+.status-pill--sand {
+  background: rgba(244, 214, 160, 0.28);
+  border-color: rgba(182, 139, 71, 0.14);
+}
+
+.status-pill--mist {
+  background: rgba(176, 210, 205, 0.2);
+  border-color: rgba(88, 140, 137, 0.14);
+}
+
+.status-pill--rose {
+  background: rgba(216, 140, 120, 0.18);
+  border-color: rgba(168, 84, 64, 0.14);
+}
+
+.map-frame,
+.garden-scene,
+.ar-state {
+  margin-top: 1rem;
+  min-height: 18rem;
+}
+
+.map-view,
+.garden-scene canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 1.3rem;
+}
+
+.garden-scene {
+  border-radius: 1.3rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, #10241e 0%, #081813 100%);
+}
+
+.ar-state {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.seed-grid {
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+}
+
+.seed-card {
+  text-align: left;
+  padding: 1rem;
+  cursor: pointer;
+  border: 1px solid rgba(23, 49, 39, 0.08);
+}
+
+.seed-card--active {
+  border-color: rgba(23, 49, 39, 0.3);
+  box-shadow: inset 0 0 0 1px rgba(23, 49, 39, 0.18);
+}
+
+.seed-card__title {
+  display: block;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+  font-size: 1.25rem;
+}
+
+.seed-card__detail {
+  display: block;
+  margin-top: 0.35rem;
+  color: rgba(23, 49, 39, 0.72);
+  line-height: 1.45;
+}
+
+.sound-headline {
+  margin-top: 0.3rem;
+}
+
+.journal-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.journal-entry {
+  padding: 0.9rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.journal-entry__swatch {
+  width: 0.95rem;
+  height: 3rem;
+  border-radius: 999px;
+}
+
+@media (min-width: 860px) {
+  .layout {
+    grid-template-columns: minmax(0, 1.3fr) minmax(19rem, 0.8fr);
+  }
+
+  .panel--wide {
+    grid-column: 1 / -1;
+  }
+
+  .permission-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .map-frame,
+  .garden-scene,
+  .ar-state {
+    min-height: 28rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero,
+  .panel {
+    border-radius: 1.2rem;
+  }
+
+  .hero {
+    padding: 1.2rem;
+  }
+
+  .panel {
+    padding: 1rem;
+  }
+}
