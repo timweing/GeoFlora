@@ -9,11 +9,11 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@geoflora/audio": "workspace:*",
-    "@geoflora/config": "workspace:*",
-    "@geoflora/rendering": "workspace:*",
-    "@geoflora/shared": "workspace:*",
-    "@geoflora/worldgen": "workspace:*",
+    "@geoflora/audio": "0.1.0",
+    "@geoflora/config": "0.1.0",
+    "@geoflora/rendering": "0.1.0",
+    "@geoflora/shared": "0.1.0",
+    "@geoflora/worldgen": "0.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "three": "^0.183.0"
@@ -26,4 +26,3 @@
     "vite": "^6.3.5"
   }
 }
-
